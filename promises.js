@@ -12,3 +12,20 @@ const helloWorld = () => {
 };
 
 helloWorld().then(helloPlanet);
+
+async function getJson() {
+  await fetch("https://jsonplaceholder.typicode.com/todos/1").then((respone) =>
+    respone.json().then((json) => {
+      console.log(json);
+      let h1 = document.getElementById("h1");
+      h1.innerHTML = json.title;
+    })
+  );
+}
+
+function apiRequest() {
+  console.log("API Request");
+  getJson().then(() => console.log("done"));
+}
+
+apiRequest();
