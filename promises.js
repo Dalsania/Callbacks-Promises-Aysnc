@@ -1,6 +1,8 @@
-const helloPlanet = (blocke) => {
+const helloPosts = (blocke) => {
   console.log("Getting Posts");
 };
+
+console.log("hello showing github to sahil");
 
 const helloWorld = () => {
   return new Promise((resolve, reject) => {
@@ -11,16 +13,16 @@ const helloWorld = () => {
   });
 };
 
-helloWorld().then(helloPlanet);
+helloWorld().then(helloPosts);
 
 async function getJson() {
-  await fetch("https://jsonplaceholder.typicode.com/todos/1").then((respone) =>
-    respone.json().then((json) => {
+  await fetch("https://jsonplaceholder.typicode.com/todos/101")
+    .then((respone) => respone.json())
+    .then((json) => {
       console.log(json);
       let h1 = document.getElementById("h1");
       h1.innerHTML = json.title;
-    })
-  );
+    });
 }
 
 function apiRequest() {
